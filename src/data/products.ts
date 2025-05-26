@@ -37,7 +37,7 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    name: 'Teblet Gamer',
+    name: 'Tablet Gamer',
     description: 'Desafie os limites do entretenimento com o Tablet Gamer, um dispositivo poderoso que combina mobilidade, desempenho e imersão em uma só tela. Equipado com processador de alta performance e gráficos avançados, ele roda seus jogos favoritos com fluidez e riqueza de detalhes, onde quer que você esteja.',
     price: 3299.99,
     image: tabletImg,

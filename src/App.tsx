@@ -5,6 +5,7 @@ import Cart from "./components/Cart"
 import CartSummary from "./components/CartSummary"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Buscar from "./pages/Buscar"
 import "./globals.css"
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/buscar" element={<Buscar />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
