@@ -14,14 +14,11 @@ interface CartContextType {
   total: number;
 }
 
-// Criando o contexto
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-// Provedor do contexto
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  // Adicionar produto ao carrinho
   const addToCart = (product: Product) => {
     const existing = cart.find(item => item.id === product.id);
 
@@ -35,7 +32,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Remover produto do carrinho
   const removeFromCart = (productId: number) => {
     const updatedCart = cart
       .map(item =>
@@ -46,12 +42,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCart(updatedCart);
   };
 
-  // Limpar carrinho
   const clearCart = () => {
     setCart([]);
   };
 
-  // Calcular total
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
@@ -61,7 +55,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Hook personalizado para usar o carrinho
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {

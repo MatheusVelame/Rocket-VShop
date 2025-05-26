@@ -1,17 +1,20 @@
-import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { Link } from "react-router-dom"
+import { useCart } from "../context/CartContext"
+import { ShoppingCart } from "lucide-react"
+import styles from "../styles/CartSummary.module.css"
 
 export default function CartSummary() {
-  const { cart } = useCart();
+  const { cart } = useCart()
 
-  // Soma total de itens no carrinho
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
-    <div style={{ position: 'fixed', top: 10, right: 10, background: '#eee', padding: '0.5rem 1rem', borderRadius: '4px' }}>
-      <Link to="/checkout">
-        Carrinho: {totalItems} item{totalItems !== 1 ? 's' : ''}
-      </Link>
-    </div>
-  );
+    <Link to="/cart" className={styles.cartSummary}>
+      <div className={styles.cartIcon}>
+        <ShoppingCart size={20} />
+        {totalItems > 0 && <span className={styles.badge}>{totalItems}</span>}
+      </div>
+      <span className={styles.cartText}>Carrinho</span>
+    </Link>
+  )
 }

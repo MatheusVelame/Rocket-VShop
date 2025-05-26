@@ -1,30 +1,82 @@
-import { useParams, Link } from 'react-router-dom';
-import { products } from '../data/products';
-import { useCart } from '../context/CartContext';
+"use client"
+
+import { useParams, Link } from "react-router-dom"
+import { products } from "../data/products"
+import { useCart } from "../context/CartContext"
+import { ArrowLeft, ShoppingCart, Star } from "lucide-react"
+import styles from "../styles/ProductDetails.module.css"
 
 export default function ProductDetails() {
-  const { id } = useParams<{ id: string }>();
-  const productId = Number(id);
-  const product = products.find(p => p.id === productId);
-  const { addToCart } = useCart();
+  const { id } = useParams<{ id: string }>()
+  const productId = Number(id)
+  const product = products.find((p) => p.id === productId)
+  const { addToCart } = useCart()
 
   if (!product) {
     return (
-      <div>
-        <p>Produto não encontrado.</p>
-        <Link to="/">Voltar para Home</Link>
+      <div className={styles.notFound}>
+        <h2>Produto não encontrado</h2>
+        <p>O produto que você está procurando não existe ou foi removido.</p>
+        <Link to="/" className={styles.backBtn}>
+          <ArrowLeft size={16} />
+          Voltar para Home
+        </Link>
       </div>
-    );
+    )
   }
 
   return (
-    <div>
-      <h2>{product.name}</h2>
-      <p>Preço: R$ {product.price.toFixed(2)}</p>
-      {/* Aqui você pode colocar mais informações do produto, imagens, descrição, etc */}
-      <button onClick={() => addToCart(product)}>Adicionar ao carrinho</button>
-      <br />
-      <Link to="/">Voltar para Home</Link>
+    <div className={styles.container}>
+      <Link to="/" className={styles.backLink}>
+        <ArrowLeft size={16} />
+        Voltar para loja
+      </Link>
+
+      <div className={styles.productDetail}>
+        <div className={styles.imageSection}>
+          <img src={`/placeholder.svg?height=400&width=400`} alt={product.name} className={styles.productImage} />
+        </div>
+
+        <div className={styles.infoSection}>
+          <div className={styles.productHeader}>
+            <h1 className={styles.productTitle}>{product.name}</h1>
+            <div className={styles.rating}>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={16} className={i < 4 ? styles.starFilled : styles.starEmpty} />
+              ))}
+              <span className={styles.ratingText}>(4.0) • 127 avaliações</span>
+            </div>
+          </div>
+
+          <div className={styles.priceSection}>
+            <span className={styles.price}>R$ {product.price.toFixed(2)}</span>
+            <span className={styles.installments}>ou 12x de R$ {(product.price / 12).toFixed(2)}</span>
+          </div>
+
+          <div className={styles.description}>
+            <h3>Descrição do Produto</h3>
+            <p>
+              Este é um produto de alta qualidade que oferece excelente custo-benefício. Fabricado com materiais premium
+              e tecnologia avançada, garantindo durabilidade e satisfação do cliente.
+            </p>
+          </div>
+
+          <div className={styles.features}>
+            <h3>Características</h3>
+            <ul>
+              <li>✓ Garantia de 1 ano</li>
+              <li>✓ Frete grátis para todo o Brasil</li>
+              <li>✓ Entrega em até 7 dias úteis</li>
+              <li>✓ Troca grátis em 30 dias</li>
+            </ul>
+          </div>
+
+          <button className={styles.addToCartBtn} onClick={() => addToCart(product)}>
+            <ShoppingCart size={20} />
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
