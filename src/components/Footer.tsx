@@ -1,5 +1,6 @@
-import { Store, Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react"
 import styles from "../styles/Footer.module.css"
+import logoImg from '../images/Vlogo.png';
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className={styles.footerContent}>
           <div className={styles.section}>
             <div className={styles.logo}>
-              <Store size={24} />
+              <img src={logoImg} alt="Logo VShop" className={styles.logoImage} />
               <span className={styles.logoText}>VShop</span>
             </div>
             <p className={styles.description}>

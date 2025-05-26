@@ -6,6 +6,7 @@ import CartSummary from "./components/CartSummary"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Buscar from "./pages/Buscar"
+import AboutUs from "./pages/AboutUs"
 import "./globals.css"
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/buscar" element={<Buscar />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </main>
       <Footer />
