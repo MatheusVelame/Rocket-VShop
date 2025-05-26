@@ -8,7 +8,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
           <Store size={24} />
-          <span className={styles.logoText}>ShopSpark</span>
+          <span className={styles.logoText}>VShop</span>
         </Link>
 
         <div className={styles.searchBar}>
@@ -19,12 +19,6 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link to="/" className={styles.navLink}>
             Início
-          </Link>
-          <Link to="/categories" className={styles.navLink}>
-            Categorias
-          </Link>
-          <Link to="/offers" className={styles.navLink}>
-            Ofertas
           </Link>
         </nav>
 

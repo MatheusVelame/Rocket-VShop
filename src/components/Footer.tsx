@@ -9,19 +9,19 @@ export default function Footer() {
           <div className={styles.section}>
             <div className={styles.logo}>
               <Store size={24} />
-              <span className={styles.logoText}>ShopSpark</span>
+              <span className={styles.logoText}>VShop</span>
             </div>
             <p className={styles.description}>
               Sua loja online de confiança com os melhores produtos e preços do mercado.
             </p>
             <div className={styles.socialLinks}>
-              <a href="#" className={styles.socialLink}>
+              <a className={styles.socialLink}>
                 <Facebook size={20} />
               </a>
-              <a href="#" className={styles.socialLink}>
+              <a className={styles.socialLink}>
                 <Instagram size={20} />
               </a>
-              <a href="#" className={styles.socialLink}>
+              <a className={styles.socialLink}>
                 <Twitter size={20} />
               </a>
             </div>
@@ -34,12 +34,6 @@ export default function Footer() {
                 <a href="/">Início</a>
               </li>
               <li>
-                <a href="/categories">Categorias</a>
-              </li>
-              <li>
-                <a href="/offers">Ofertas</a>
-              </li>
-              <li>
                 <a href="/about">Sobre Nós</a>
               </li>
             </ul>
@@ -49,16 +43,16 @@ export default function Footer() {
             <h3 className={styles.sectionTitle}>Atendimento</h3>
             <ul className={styles.linkList}>
               <li>
-                <a href="/help">Central de Ajuda</a>
+                <a >Central de Ajuda</a>
               </li>
               <li>
-                <a href="/shipping">Entrega</a>
+                <a>Entrega</a>
               </li>
               <li>
-                <a href="/returns">Trocas e Devoluções</a>
+                <a>Trocas e Devoluções</a>
               </li>
               <li>
-                <a href="/contact">Fale Conosco</a>
+                <a>Fale Conosco</a>
               </li>
             </ul>
           </div>
@@ -68,7 +62,7 @@ export default function Footer() {
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
                 <Mail size={16} />
-                <span>contato@shopSpark.com</span>
+                <span>contato@VShop.com</span>
               </div>
               <div className={styles.contactItem}>
                 <Phone size={16} />
@@ -76,17 +70,17 @@ export default function Footer() {
               </div>
               <div className={styles.contactItem}>
                 <MapPin size={16} />
-                <span>São Paulo, SP</span>
+                <span>Pernambuco, PE</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className={styles.footerBottom}>
-          <p>&copy; 2024 ShopSpark. Todos os direitos reservados.</p>
+          <p>&copy; 2024 VShop. Todos os direitos reservados.</p>
           <div className={styles.footerLinks}>
-            <a href="/privacy">Política de Privacidade</a>
-            <a href="/terms">Termos de Uso</a>
+            <a>Política de Privacidade</a>
+            <a>Termos de Uso</a>
           </div>
         </div>
       </div>

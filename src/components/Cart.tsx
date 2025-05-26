@@ -1,18 +1,40 @@
 "use client"
 
+import { Link } from "react-router-dom"
+import { useState } from "react"
 import { useCart } from "../context/CartContext"
-import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react"
+import { ArrowLeft, Trash2, Plus, Minus, ShoppingBag, CheckCircle } from "lucide-react"
 import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
   const { cart, removeFromCart, addToCart, clearCart, total } = useCart()
+  const [purchaseComplete, setPurchaseComplete] = useState(false)
 
-  if (cart.length === 0) {
+  const handleCheckout = () => {
+    setPurchaseComplete(true)
+    clearCart()
+  }
+
+  if (cart.length === 0 && !purchaseComplete) {
     return (
       <div className={styles.emptyCart}>
         <ShoppingBag className={styles.emptyIcon} />
         <h2>Seu carrinho está vazio</h2>
         <p>Adicione alguns produtos para começar suas compras!</p>
+      </div>
+    )
+  }
+
+  if (purchaseComplete) {
+    return (
+      <div className={styles.emptyCart}>
+        <CheckCircle className={styles.successIcon} />
+        <h2>Compra realizada com sucesso!</h2>
+        <p>Obrigado por comprar com a gente.</p>
+        <Link to="/" className={styles.backLink}>
+          <ArrowLeft size={16} />
+          Voltar para loja
+        </Link>
       </div>
     )
   }
@@ -68,7 +90,9 @@ export default function Cart() {
             <Trash2 size={16} />
             Limpar Carrinho
           </button>
-          <button className={styles.checkoutBtn}>Finalizar Compra</button>
+          <button className={styles.checkoutBtn} onClick={handleCheckout}>
+            Finalizar Compra
+          </button>
         </div>
       </div>
     </div>
