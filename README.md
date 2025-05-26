@@ -1,54 +1,94 @@
-# React + TypeScript + Vite
+# 🛒 Loja Online — E-commerce com React + TypeScript utilizando Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação de e-commerce simples e moderna construída com **React**, **TypeScript** e **Vite**. Ele permite ao usuário visualizar produtos, ver detalhes, adicionar ao carrinho e finalizar a compra.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- 📦 **Listagem de Produtos**
+- 🔍 **Busca por Produtos pelo Nome**
+- 📄 **Detalhes de cada Produto**
+- 🛒 **Carrinho de Compras em Tempo Real**
+- ✅ **Finalização de Compra**
+- ♻️ **Persistência Temporária com Context API**
+- 🎨 **Estilização com CSS Modules**
+- ⚡ **Roteamento com React Router**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🧠 Tecnologias Utilizadas
+
+- [React](https://reactjs.org/) — Biblioteca para construção da interface
+- [TypeScript](https://www.typescriptlang.org/) — Superset do JavaScript com tipagem estática
+- [Vite](https://vitejs.dev/) — Bundler moderno e rápido para desenvolvimento
+- [React Router DOM](https://reactrouter.com/) — Gerenciamento de rotas entre páginas
+- [Lucide Icons](https://lucide.dev/) — Ícones modernos para interfaces React
+- [Context API](https://reactjs.org/docs/context.html) — Gerenciamento de estado global
+- [CSS Modules](https://github.com/css-modules/css-modules) — Escopo de estilos local para componentes
+
+---
+
+## 📂 Estrutura de Pastas
+
+```
+📁 src
+├── 📁 components → Componentes reutilizáveis da interface
+├── 📁 context → Contexto global para gerenciamento do carrinho de compras
+├── 📁 data → Dados simulados dos produtos
+├── 📁 images → Imagens utilizadas na interface
+├── 📁 pages → Páginas principais da aplicação
+├── 📁 styles → Estilos globais e locais com CSS Modules
+├── 📁 types → Definições de tipos TypeScript compartilhados
+├── App.tsx → Componente raiz que organiza a estrutura da aplicação
+├── main.tsx → Arquivo de entrada que inicializa o React e renderiza o App
+└── globals.css → Estilos globais aplicados à aplicação inteira
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✅ Como Rodar o Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone o repositório:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+git clone https://github.com/MatheusVelame/VShop.git
+cd VShop
 ```
+
+### 2. Instale as dependências:
+
+```bash
+pnpm install
+```
+
+### 3. Execute a aplicação:
+
+```bash
+pnpm dev
+```
+
+- Obs.: 💡 Certifique-se de que você tem o PNPM instalado. Caso não tenha, instale com:
+
+```bash
+npm install -g pnpm
+```
+
+### 4. Acesse a aplicação no navegador:
+
+```bash
+http://localhost:5173
+```
+
+## 📌 Observações
+
+- Os produtos são fictícios e armazenados localmente no arquivo `products.ts`.
+- Não há integração com backend, banco de dados ou autenticação.
+- Projeto focado em boas práticas de **componentização**, **navegação**, **estado global** e **UX**.
+
+## 👨‍💻 Contato
+
+<a href="https://github.com/MatheusVelame">
+  <img src="https://avatars.githubusercontent.com/MatheusVelame" width="100px;" alt="Foto de Matheus"/><br>
+  <sub>
+    <b>Matheus V. Pessoa</b>
+  </sub>
+</a>
