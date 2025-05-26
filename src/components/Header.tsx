@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { Search, Heart } from "lucide-react"
+import { Search } from "lucide-react"
 import { useState } from "react"
 import styles from "../styles/Header.module.css"
 import logoImg from '../images/Vlogo.png';
@@ -45,11 +45,6 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className={styles.userActions}>
-          <button className={styles.actionBtn}>
-            <Heart size={20} />
-          </button>
-        </div>
       </div>
     </header>
   )

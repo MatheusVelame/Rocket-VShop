@@ -1,6 +1,7 @@
 import { Award, Truck, Shield, Heart, CheckCircle } from "lucide-react"
 import styles from "../styles/AboutUs.module.css"
 import logoImg from '../images/Vlogo.png';
+import missaoImg from '../images/missaoImg.jpg';
 
 export default function AboutUs() {
   const stats = [
@@ -77,7 +78,7 @@ export default function AboutUs() {
           </p>
         </div>
         <div className={styles.heroImage}>
-        <img src={logoImg} alt="Logo VShop" className={styles.heroImg} />
+            <img src={logoImg} alt="Logo VShop" className={styles.heroImg} />
         </div>
       </section>
 
@@ -117,7 +118,7 @@ export default function AboutUs() {
             </div>
           </div>
           <div className={styles.missionImage}>
-            <img src="/placeholder.svg?height=400&width=500" alt="Nossa missão" className={styles.missionImg} />
+            <img src={missaoImg} alt="missao" className={styles.missionImg} />
           </div>
         </div>
       </section>
