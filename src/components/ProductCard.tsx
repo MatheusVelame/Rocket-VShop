@@ -16,7 +16,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className={styles.productCard}>
       <div className={styles.productImage}>
-        <img src={`/placeholder.svg?height=200&width=200`} alt={product.name} className={styles.image} />
+        <img src={product.image} alt={product.name} className={styles.image} />
         <div className={styles.overlay}>
           <Link to={`/product/${product.id}`} className={styles.viewBtn}>
             <Eye size={16} />

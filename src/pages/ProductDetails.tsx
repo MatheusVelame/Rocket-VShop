@@ -34,7 +34,7 @@ export default function ProductDetails() {
 
       <div className={styles.productDetail}>
         <div className={styles.imageSection}>
-          <img src={`/placeholder.svg?height=400&width=400`} alt={product.name} className={styles.productImage} />
+          <img src={product.image} alt={product.name} className={styles.image} />
         </div>
 
         <div className={styles.infoSection}>
@@ -43,7 +43,7 @@ export default function ProductDetails() {
             <div className={styles.rating}>
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={16} className={i < 4 ? styles.starFilled : styles.starEmpty} />
-              ))}
+              ))} 
               <span className={styles.ratingText}>(4.0) • 127 avaliações</span>
             </div>
           </div>
@@ -56,8 +56,7 @@ export default function ProductDetails() {
           <div className={styles.description}>
             <h3>Descrição do Produto</h3>
             <p>
-              Este é um produto de alta qualidade que oferece excelente custo-benefício. Fabricado com materiais premium
-              e tecnologia avançada, garantindo durabilidade e satisfação do cliente.
+              {product.description}
             </p>
           </div>
 
