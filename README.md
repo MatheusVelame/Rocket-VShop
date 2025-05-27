@@ -60,16 +60,16 @@ cd Rocket-VShop
 pnpm install
 ```
 
-### 3. Execute a aplicação:
-
-```bash
-pnpm dev
-```
-
 - Obs.: 💡 Certifique-se de que você tem o PNPM instalado. Caso não tenha, instale com:
 
 ```bash
 npm install -g pnpm
+```
+
+### 3. Execute a aplicação:
+
+```bash
+pnpm dev
 ```
 
 ### 4. Acesse a aplicação no navegador:
