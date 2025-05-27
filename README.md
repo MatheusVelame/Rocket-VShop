@@ -51,7 +51,7 @@ Este projeto é uma aplicação de e-commerce simples e moderna construída com 
 
 ```bash
 git clone https://github.com/MatheusVelame/VShop.git
-cd VShop
+Rocket-VShop
 ```
 
 ### 2. Instale as dependências:
