@@ -37,6 +37,9 @@ export default function Footer() {
               <li>
                 <a href="/about">Sobre Nós</a>
               </li>
+              <li>
+                <a href="/pedidos">Meus Pedidos</a>
+              </li>
             </ul>
           </div>
 

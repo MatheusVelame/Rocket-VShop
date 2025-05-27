@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { useCart } from "../context/CartContext"
-import { ArrowLeft, Trash2, Plus, Minus, ShoppingBag, CheckCircle } from "lucide-react"
+import { Trash2, Plus, Minus, ShoppingBag, CheckCircle } from "lucide-react"
 import styles from "../styles/Cart.module.css"
 
 export default function Cart() {
@@ -9,6 +9,18 @@ export default function Cart() {
   const [purchaseComplete, setPurchaseComplete] = useState(false)
 
   const handleCheckout = () => {
+    const orderId = Math.random().toString(36).substr(2, 9).toUpperCase()
+    const currentOrder = {
+    id: orderId,
+    date: new Date().toLocaleDateString("pt-BR"),
+    items: cart.map(({ name, price, quantity }) => ({ name, price, quantity })),
+    total,
+  }
+
+    const previousOrders = JSON.parse(localStorage.getItem("orders") || "[]")
+    const updatedOrders = [...previousOrders, currentOrder]
+    localStorage.setItem("orders", JSON.stringify(updatedOrders))
+
     setPurchaseComplete(true)
     clearCart()
   }
@@ -29,9 +41,8 @@ export default function Cart() {
         <CheckCircle className={styles.successIcon} />
         <h2>Compra realizada com sucesso!</h2>
         <p>Obrigado por comprar com a gente.</p>
-        <Link to="/" className={styles.backLink}>
-          <ArrowLeft size={16} />
-          Voltar para loja
+        <Link to="/pedidos" className={styles.backLink}>
+          Ver meus pedidos
         </Link>
       </div>
     )
