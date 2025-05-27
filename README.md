@@ -50,7 +50,7 @@ Este projeto é uma aplicação de e-commerce simples e moderna construída com 
 ### 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/MatheusVelame/VShop.git
+git clone https://github.com/MatheusVelame/Rocket-VShop.git
 Rocket-VShop
 ```
 
